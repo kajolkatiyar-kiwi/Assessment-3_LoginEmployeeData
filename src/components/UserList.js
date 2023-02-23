@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-// import axios from 'axios'
 import { Table } from 'react-bootstrap';
-import './cssFiles/UserList.css'
-import Navbar from './childComponents/Navbar';
-import Pagination from './childComponents/Pagination';
 
+import '../styles/UserList.css'
+import Navbar from './Navbar'
+import Pagination from './Pagination'
 
 const UserList = () => {
 
@@ -81,7 +80,7 @@ const UserList = () => {
                         <th>EMPLOYEE-AVATAR</th>
                         <th
                             onClick={() => sorting("name")}
-                            title={"Click to sort"}>EMPLOYEE-NAME</th>
+                            title={"Click to sort"} style={{cursor:"pointer"}}>EMPLOYEE-NAME</th>
                         <th>E-MAIL</th>
                         {/* <th>DATE-OF-JOINING</th> */}
                         <th>CONTACT</th>
