@@ -1,0 +1,48 @@
+.table-style {
+    /* background: pink; */
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 80%;
+}
+.table{
+    margin-top: 10vh;
+}
+.empLogo {
+    min-width: 5px;
+    width: 10%;
+    border-radius: 50%;
+    /* border: 2px solid green; */
+}
+
+.fa {
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+    color: black;
+    -webkit-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+    font-size: 1.1rem;
+}
+
+.fa:hover {
+    color: rgb(47, 214, 122);
+}
+
+.fa-plus:before {
+    content: "\f067";
+    font-size: 1.5rem;
+  }
+
+.fa-trash-alt {
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+    color: black;
+    -webkit-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+    font-size: 1.1rem;
+}
+
+.fa-trash-alt:hover {
+    color: rgb(214, 47, 61);
+}
