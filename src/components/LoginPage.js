@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import './cssFiles/LoginPage.css'
+import '../styles/LoginPage.css'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
 
   const handleLogin = () => {
-    if(!email || !password) {
-      setLoginStatus('Please enter all the fields');
-    }else if (email !== 'aditya.tripathi@testmail.com' && password !== 'password123'){
-      setLoginStatus('Invalid credentials. Please try again.')
+    if(email === 'aditya.tripathi@testmail.com' && password === 'password123'){
+      navigate("/userList");
+    }else{
+      if(!email || !password){
+        alert('All fields are required');
+      }else{
+        alert('Invalid credentials! Please try again.')
+      }
     }
   };
 
@@ -42,10 +49,12 @@ const LoginPage = () => {
                                 <label className="form-label" for="form3Example4">Password</label>
                             </div>
 
-                            <button type="submit" className="btn btn-primary btn-block mb-4" onClick={handleLogin}>
+                            <button 
+                            type="submit" className="btn btn-primary btn-block mb-4" 
+                            onClick={handleLogin}>
                                 Login 
                             </button>
-                            <p>{loginStatus}</p>
+                            <p className='err-msg'>{loginStatus}</p>
                             </form>
                     </div>
                 </div>

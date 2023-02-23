@@ -5,3 +5,8 @@
     box-sizing: border-box;
 }
 
+.err-msg {
+    font-size: 25px;
+    color: red;
+    text-transform: uppercase;
+}

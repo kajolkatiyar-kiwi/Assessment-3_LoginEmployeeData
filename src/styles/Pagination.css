@@ -1,0 +1,36 @@
+.pagination {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    
+    background-color: grey;
+    color: black;
+}
+
+.pagination button {
+    border: none;
+    
+    background-color: grey;
+    color: black;
+    /* background-color: rgb(150, 185, 249);
+    border-right: 1px solid rgb(41, 96, 196); */
+    border-right: 1px solid black;
+    font-size: 20px;
+    margin: 10px 0;
+    width: 80px;
+    border-radius: 0px;
+    bottom: 0;
+}
+
+.pagination button:hover {
+    background-color: #a8a6a6;
+    color: black;
+}
+
+.pagination button:last-child {
+    border: none;
+}
