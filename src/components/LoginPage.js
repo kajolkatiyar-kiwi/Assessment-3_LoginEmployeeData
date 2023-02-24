@@ -11,6 +11,7 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     if(email === 'aditya.tripathi@testmail.com' && password === 'password123'){
+      localStorage.setItem('userCreds', true)
       navigate("/userList");
     }else{
       if(!email || !password){

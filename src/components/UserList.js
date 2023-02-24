@@ -5,7 +5,7 @@ import axios from 'axios'
 import '../styles/UserList.css'
 import Navbar from './Navbar'
 import Pagination from './Pagination'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // import records from '../records.json'
@@ -15,6 +15,10 @@ const UserList = () => {
     const [order, setOrder] = useState("ASC");
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(10);
+    
+    const userCreds = localStorage.getItem('userCreds');
+    const navigate = useNavigate();
+    if(!Boolean(userCreds)) navigate('/')
 
     // const dispatch = useDispatch()
     const getData = ()=> {
