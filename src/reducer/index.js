@@ -1,4 +1,4 @@
-import itemsReducer from "./todoReducers";
+import itemsReducer from "./functionReducers";
 import { combineReducers } from "redux";
 
 const rootReducers = combineReducers({

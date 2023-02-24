@@ -1,7 +1,7 @@
-import data from '../../records.json'
+// import data from '../../records.json'
 
 const initialState = {
-    data: data
+    data: []
 };
 
 function itemsReducer(state = initialState, action) {
