@@ -1,55 +1,45 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { Table } from 'react-bootstrap';
 
+import { Table } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import '../styles/UserList.css'
 import Navbar from './Navbar'
 import Pagination from './Pagination'
+import {Link} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+// import records from '../records.json'
 
 const UserList = () => {
-
     const [details, setDetails] = useState([]);
     const [order, setOrder] = useState("ASC");
-
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(10);
 
-
-    const getData = () => {
-        fetch('records.json', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        }).then((response) => {
-            return response.json();
-        }).then((data) => {
-            // console.log(data[0].avatar);
-            setDetails(data);
+    // const dispatch = useDispatch()
+    const getData = ()=> {
+        axios.get('https://63dcf998df83d549ce97a7ea.mockapi.io/empD')
+        .then((res) => {
+            setDetails(res.data);
+            // dispatch({payload: res.data})
         })
     }
 
-    useEffect(() => {
+    useEffect(()=>{
         getData();
-    }, [])
+    },[])
 
     const lastPostIndex = currentPage * postPerPage;
     const firstPostIndex = lastPostIndex - postPerPage;
     const currentList = details.slice(firstPostIndex, lastPostIndex);
 
-    // setCurrentPage(currentPage)
 
-
-
-    // useEffect(() => {
-    //     axios
-    //         .get("myreco.json")
-    //         .then((response) => {
-    //             // setDetails(response.data);
-    //             console.log(response.data);
-    //         })
-    // }, []);
-
+    const handleDelete = (id) =>{
+        axios.delete(`https://63dcf998df83d549ce97a7ea.mockapi.io/empD/${id}`)
+        .then(()=>{
+          getData();
+        })
+    }
 
     const sorting = (col) => {
         if (order === "ASC") {
@@ -72,7 +62,10 @@ const UserList = () => {
 
     return (
         <div>
-            <Navbar />
+            <Navbar details={details} handleDelete={handleDelete} getData={getData} />
+            <Link to="/addItem">
+                            <button className='add'><i className='fa fa-plus add-btn' title='Add Item'></i></button>
+                            </Link>
             <Table className="table table-striped table-style">
                 <thead>
                     <tr>
@@ -84,7 +77,9 @@ const UserList = () => {
                         <th>E-MAIL</th>
                         {/* <th>DATE-OF-JOINING</th> */}
                         <th>CONTACT</th>
-                        <th><i className='fa fa-plus add-btn' title='Add Item'></i></th>
+                        <th>ACTIONS
+                            
+                            </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,7 +95,8 @@ const UserList = () => {
                                 <td>{detail["email"]}</td>
                                 {/* <td>{date.toLocaleDateString()}</td> */}
                                 <td>{detail["contact"]}</td>
-                                <td><i className='far fa-trash-alt add-btn' title='Delete Item'></i></td>
+                                <td>
+                                    <i className='far fa-trash-alt add-btn' title='Delete Item' onClick={()=> handleDelete(detail.id)}></i></td>
                             </tr>
                         })}
                 </tbody>

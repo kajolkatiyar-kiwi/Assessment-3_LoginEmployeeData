@@ -91,5 +91,34 @@ button:hover {
     border: 1px solid black;
 }
 
+.add {
+    margin: 10px;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    margin-bottom: 0;
+}
 
+.add:hover{
+    /* background-color: transparent; */
+    background-color: transparent;
+    color: green;
+}
 
+.count {
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 3px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}

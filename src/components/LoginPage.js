@@ -7,7 +7,7 @@ const LoginPage = () => {
   
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loginStatus, setLoginStatus] = useState('');
+  // const [loginStatus, setLoginStatus] = useState('');
 
   const handleLogin = () => {
     if(email === 'aditya.tripathi@testmail.com' && password === 'password123'){
@@ -54,7 +54,7 @@ const LoginPage = () => {
                             onClick={handleLogin}>
                                 Login 
                             </button>
-                            <p className='err-msg'>{loginStatus}</p>
+                            {/* <p className='err-msg'>{loginStatus}</p> */}
                             </form>
                     </div>
                 </div>
@@ -66,7 +66,6 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
 
 
 

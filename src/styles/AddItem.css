@@ -1,0 +1,82 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    /* width: 0px; */
+    margin: auto;
+    /* width: 50px; */
+  }
+  
+  .label {
+    margin-top: 13px;
+  }
+  
+  .input,
+  .textarea {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .textarea {
+    height: 100px;
+  }
+  
+  .button {
+    /* margin-top: 10px; */
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #2a67ca;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    /* display: inline-block;
+    width: 300px; */
+
+  }
+  
+  .button:hover {
+    background-color: #11378a;
+  }
+
+  
+
+
+  /* .container {
+    position: relative;
+  } */
+  
+  .container  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 40px;
+    width: 50%;
+    height: 50%;
+  }
+
+  /* .container {
+    display: grid;
+    place-items: center;
+  } */
+
+
+  .sideR {
+    float: right;
+    margin: 50px;
+    
+    background-color: #4285f4;
+  }
+
+  .sideL {
+    float: left;
+    margin: 50px;
+    
+    background-color: #4285f4;
+  }
